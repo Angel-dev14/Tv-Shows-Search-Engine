@@ -1,0 +1,9 @@
+<h1 class="text-center">Cast</h1>
+<ul class="list-group">
+  <li *ngFor="let actor of actors$ | async" class="list-group-item">
+    <div class="actor text-center">
+      <img src="{{ actor.image }}" alt="actor image" class="img-fluid" />
+      <h4 class="mt-3">{{ actor.name }}</h4>
+    </div>
+  </li>
+</ul>

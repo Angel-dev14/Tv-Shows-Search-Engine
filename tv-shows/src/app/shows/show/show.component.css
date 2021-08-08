@@ -1,0 +1,27 @@
+.show-image {
+  max-width: 300px;
+  max-height: 400px;
+  border: 10px ridge white;
+}
+.show-info {
+  padding-left: 50px;
+}
+.genre-type:not(:last-of-type):after {
+  content: ", ";
+}
+.summary {
+  text-align: justify;
+}
+@media screen and (max-width: 992px) {
+  .show-info {
+    margin-top: 30px;
+    text-align: center;
+    padding-left: 0;
+  }
+  h1 {
+    text-align: center;
+  }
+  .summary {
+    padding: 10px;
+  }
+}

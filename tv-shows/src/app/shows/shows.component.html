@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 p-0">
+      <form class="form-inline search-form mt-3" (ngSubmit)='onSubmit()'>
+        <input
+          type="text"
+          class="form-control"
+          [formControl]="searchBar"
+          placeholder="Search shows..."
+        />
+        <button class="btn btn-dark">Search</button>
+      </form>
+    </div>
+  </div>
+  <app-show-preview *ngFor="let show of shows" [show]="show"></app-show-preview>
+  <div class='loader' *ngIf='loading'>
+    <div class="spinner-border spinner" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>

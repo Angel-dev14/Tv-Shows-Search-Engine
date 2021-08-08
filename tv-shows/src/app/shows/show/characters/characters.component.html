@@ -1,0 +1,13 @@
+<h1 class="text-center">Characters</h1>
+<ul class="list-group">
+  <li *ngFor="let character of characters$ | async" class="list-group-item">
+    <div class="character text-center">
+      <img
+        src="{{ character.image }}"
+        alt="character image"
+        class="img-fluid"
+      />
+      <h4 class="mt-3">{{ character.name }}</h4>
+    </div>
+  </li>
+</ul>

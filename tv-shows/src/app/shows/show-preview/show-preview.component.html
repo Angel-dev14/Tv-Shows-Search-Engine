@@ -1,0 +1,23 @@
+<a *ngIf="show" routerLink="/show/{{ show.id }}">
+  <div class="row show-preview">
+    <div class="col-sm-12 col-md-4 col-lg-2 image-container text-center">
+      <img
+        src="{{ show.image }}"
+        alt="show-image"
+        class="img-fluid show-image"
+      />
+    </div>
+    <div class="show-body col-sm-12 col-md-8 col-lg-10">
+      <div class="heading">
+        <h3>{{ show.name }}</h3>
+        <p>{{ show.score }}</p>
+      </div>
+      <div [innerHtml]="show.summary"></div>
+      <div class="genre">
+        <span *ngFor="let genre of show.genres" class="genre-type">{{
+          genre
+        }}</span>
+      </div>
+    </div>
+  </div>
+</a>

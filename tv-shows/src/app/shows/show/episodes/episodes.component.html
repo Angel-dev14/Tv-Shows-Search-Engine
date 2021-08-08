@@ -1,0 +1,43 @@
+<h1 class="text-center">Episodes</h1>
+<ul class="list-group"></ul>
+<li *ngFor="let episode of episodes$ | async" class="list-group-item episode">
+  <h5>
+    S{{ episode.season }}E{{ episode.episode }}
+    <span>{{ episode.name }}</span>
+  </h5>
+
+  <ng-template #episodeContent let-modal>
+    <div class="modal-header">
+      <h1>{{ episode.name }}</h1>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <img src="{{ episode.image }}" alt="" class="img-fluid" />
+      <div [innerHtml]="episode.summary" class="summary"></div>
+      <p><b>Runtime:</b> {{ episode.runtime }} minutes</p>
+      <p><b>Air date:</b> {{ episode.airDate | date: "dd-MM-yyyy" }}</p>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-light"
+        (click)="modal.close('Close click')"
+      >
+        Close
+      </button>
+    </div>
+  </ng-template>
+  <button
+    class="btn btn-outline-primary mb-2 mr-2 btn-more"
+    (click)="open(episodeContent)"
+  >
+    show more
+  </button>
+</li>

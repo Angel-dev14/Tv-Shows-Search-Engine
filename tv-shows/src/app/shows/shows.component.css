@@ -1,0 +1,28 @@
+.search-form input {
+  width: 80%;
+}
+.search-form button {
+  width: 20%;
+}
+.loader
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.spinner
+{
+  width: 3.5em;
+  height: 3.5em;
+  color: darkblue;
+}
+
+@media screen and (max-width: 712px) {
+  .search-form input {
+    width: 70%;
+  }
+  .search-form button {
+    width: 30%;
+  }
+}

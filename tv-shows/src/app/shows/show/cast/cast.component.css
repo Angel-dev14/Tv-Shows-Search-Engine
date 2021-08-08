@@ -1,0 +1,12 @@
+.actor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+.actor img {
+  max-width: 200px;
+  height: 200px;
+  border: 5px double ghostwhite;
+}
